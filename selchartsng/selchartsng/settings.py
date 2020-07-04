@@ -108,7 +108,7 @@ AUTOTHROTTLE_START_DELAY = 5
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-chrome_path= '/home/ubuntu/thelwk_bots/webdriver/chromedriver_83osx'
+chrome_path= '/home/ubuntu/thelwk_bots/webdriver/chromedriver_osx'
 SELENIUM_DRIVER_NAME = 'chrome' # Change to your browser name
 SELENIUM_DRIVER_EXECUTABLE_PATH = chrome_path
 SELENIUM_DRIVER_ARGUMENTS=['--headless','--no-sandbox','--disable-infobars','enable-automation','window-size=1400,1500','--disable-gpu','start-maximized','--disable-dev-shm-usage']  # '--headless' if using chrome instead of firefox
