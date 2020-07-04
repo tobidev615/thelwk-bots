@@ -8,11 +8,11 @@ def image_handler(value):
     return newest
 
 class AppleChartSpider(scrapy.Spider):
-    # custom_settings = {
-    #     'ITEM_PIPELINES': {
-    #         'project1js.pipelines.AppleChartPipeline': 300,
-    #     }
-    # }
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'chartsng.pipelines.AppleChartPipeline': 300,
+        }
+    }
     name = 'apple_chart'
     allowed_domains = ['music.apple.com/sz/playlist/top-100-nigeria/pl.2fc68f6d68004ae993dadfe99de83877']
     start_urls = [
