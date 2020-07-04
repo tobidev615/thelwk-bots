@@ -11,9 +11,11 @@ class CovidngSpider(scrapy.Spider):
             'chartsng.pipelines.CovidChartPipeline': 300,
         }
     }
+
     name = 'covidng'
     allowed_domains = ['covid19.ncdc.gov.ng']
     start_urls = ['https://covid19.ncdc.gov.ng/']
+
 
     def parse(self, response):
         today = date.today()
@@ -46,7 +48,3 @@ class CovidngSpider(scrapy.Spider):
                     'death': death
                 
             }
-
-
-            
-            
