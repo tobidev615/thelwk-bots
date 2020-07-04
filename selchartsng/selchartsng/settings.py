@@ -111,7 +111,7 @@ AUTOTHROTTLE_START_DELAY = 5
 chrome_path= '/home/ubuntu/thelwk_bots/webdriver/chromedriver_osx'
 SELENIUM_DRIVER_NAME = 'chrome' # Change to your browser name
 SELENIUM_DRIVER_EXECUTABLE_PATH = chrome_path
-SELENIUM_DRIVER_ARGUMENTS=['--headless','--window-size=1920,1080','--disable-gpu','--disable-dev-shm-usage']  # '--headless' if using chrome instead of firefox
+SELENIUM_DRIVER_ARGUMENTS=['--headless','--no-sandbox','--disable-infobars','enable-automation','window-size=1400,1500','--disable-gpu','start-maximized','--disable-dev-shm-usage']  # '--headless' if using chrome instead of firefox
 FEED_EXPORT_ENCODING='utf-8'
 
 # chrome_path= '/Users/tobiolabode/webdrivers/chromedriver'
