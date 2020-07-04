@@ -2,6 +2,8 @@
 import scrapy
 import time
 from datetime import date
+import logging
+
 
 class CovidngSpider(scrapy.Spider):
     custom_settings = {
@@ -18,7 +20,7 @@ class CovidngSpider(scrapy.Spider):
         dater = today.strftime("%Y-%m-%d")
 
         time.sleep(15)
-
+        logging.info(response.body)
         databox = response.xpath("//table[@id='custom1']/tbody/tr")
 
         day = dater
