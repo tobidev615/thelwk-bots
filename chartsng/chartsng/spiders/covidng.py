@@ -17,7 +17,7 @@ class CovidngSpider(scrapy.Spider):
         today = date.today()
         dater = today.strftime("%Y-%m-%d")
 
-        time.sleep(7)
+        time.sleep(15)
 
         databox = response.xpath("//table[@id='custom1']/tbody/tr")
 
