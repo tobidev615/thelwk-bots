@@ -21,7 +21,7 @@ class NetflixngSpider(scrapy.Spider):
 
     custom_settings = {
         'ITEM_PIPELINES': {
-            'project2sel.pipelines.localNetflixPipeline': 300,
+            'selchartsng.pipelines.localNetflixPipeline': 300,
         }
     }
 
