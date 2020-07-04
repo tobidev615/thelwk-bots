@@ -69,8 +69,6 @@ DEFAULT_REQUEST_HEADERS = {
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'chartsng.middlewares.UserAgentRotatorMiddleware': 400,
-    'scrapy_selenium.SeleniumMiddleware': 800
-
 }
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
