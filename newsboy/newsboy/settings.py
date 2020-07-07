@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
-import secrets
-import os
 
-
-# Scrapy settings for selchartsng project
+# Scrapy settings for newsboy project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -12,14 +9,14 @@ import os
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'selchartsng'
+BOT_NAME = 'newsboy'
 
-SPIDER_MODULES = ['selchartsng.spiders']
-NEWSPIDER_MODULE = 'selchartsng.spiders'
+SPIDER_MODULES = ['newsboy.spiders']
+NEWSPIDER_MODULE = 'newsboy.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'selchartsng (+http://www.yourdomain.com)'
+#USER_AGENT = 'newsboy (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -42,37 +39,27 @@ ROBOTSTXT_OBEY = False
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-DEFAULT_REQUEST_HEADERS = {  
-    'Method':'GET',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Authorization': 'Bearer',
-    'Sec-Fetch-Dest': 'empty',
-    'Sec-Fetch-Mode': 'cors',
-    'Sec-Fetch-Site': 'same-origin',
-    'Dnt': '1',
-    'referer': 'https://www.google.com.ng/',
-    'Sec-Fetch-Dest': 'document',
-    'Sec-Fetch-Mode': 'navigate',
-    'Sec-Fetch-Site': 'none',
-    'Sec-Fetch-User': '?1',
-}
+#DEFAULT_REQUEST_HEADERS = {
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
+#}
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'selchartsng.middlewares.SelchartsngSpiderMiddleware': 543,
+#    'newsboy.middlewares.NewsboySpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
+#    'newsboy.middlewares.NewsboyDownloaderMiddleware': 543,
+#}
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-    'selchartsng.middlewares.UserAgentRotatorMiddleware': 400,
-    'scrapy_selenium.SeleniumMiddleware': 800
-
+    'newsboy.middlewares.UserAgentRotatorMiddleware': 400,
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 450,
 }
 
 # Enable or disable extensions
@@ -84,7 +71,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'selchartsng.pipelines.SelchartsngPipeline': 300,
+#    'newsboy.pipelines.NewsboyPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -108,17 +95,7 @@ AUTOTHROTTLE_START_DELAY = 5
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-chrome_path= '/home/ubuntu/bots/webdrivers/chromedriver_83osx'
-SELENIUM_DRIVER_NAME = 'chrome' # Change to your browser name
-SELENIUM_DRIVER_EXECUTABLE_PATH = chrome_path
-SELENIUM_DRIVER_ARGUMENTS=['--headless','--no-sandbox','--disable-infobars','enable-automation','window-size=1400,1500','--disable-gpu','start-maximized','--disable-dev-shm-usage']  # '--headless' if using chrome instead of firefox
-FEED_EXPORT_ENCODING='utf-8'
-
-# chrome_path= '/Users/tobiolabode/webdrivers/chromedriver'
-# SELENIUM_DRIVER_NAME = 'chrome' # Change to your browser name
-# SELENIUM_DRIVER_EXECUTABLE_PATH = chrome_path
-# SELENIUM_DRIVER_ARGUMENTS=['--no-sandbox','--window-size=1920,1080','--disable-gpu','--disable-dev-shm-usage']  # '--headless' if using chrome instead of firefox
-# FEED_EXPORT_ENCODING='utf-8'
+FEED_EXPORT_ENCODING ='utf-8'
 
 DB_SETTINGS = {
     'db': "covidng_store",
@@ -126,3 +103,5 @@ DB_SETTINGS = {
     'passwd': 'Olaoluwa123',
     'host': 'ec2-3-23-20-242.us-east-2.compute.amazonaws.com'
 }
+
+DOWNLOAD_FAIL_ON_DATALOSS = False
