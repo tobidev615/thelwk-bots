@@ -48,8 +48,8 @@ class PmUpdateSpider(scrapy.Spider):
             
         next_page=response.xpath("//a[@class='next page-numbers']/@href").get()
         page_num = int("".join(filter(str.isdigit, next_page)))
-
-        if page_num < 50: 
+        # Run every 6 hours
+        if page_num < 5: 
             yield scrapy.Request(url=next_page, callback=self.parse)
 
 

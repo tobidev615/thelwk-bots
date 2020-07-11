@@ -1,0 +1,18 @@
+# CronTest
+#* * * * * cd ~/bots/ && echo `pwd`  >> ~/logs/cronlogs/newjob.log 2>&1
+
+#Bots 
+# Runs at 1 am everyday
+0 1 * * * cd ~/bots/thelwk-bots/chartsng/ && (curl http://localhost:6800/schedule.json -d project=chartsng -d spider=apple_chart) >> ~/logs/cronlogs/newjob.log 2>&1
+0 1 * * * cd ~/bots/thelwk-bots/chartsng/ && (curl http://localhost:6800/schedule.json -d project=chartsng -d spider=covidng) >> ~/logs/cronlogs/newjob.log 2>&1
+
+#Runs every 6 hours 
+
+0 */6 * * * cd ~/bots/thelwk-bots/newsboy/ && (curl http://localhost:6800/schedule.json -d project=newsboy -d spider=vanguard) >> ~/logs/cronlogs/newjob.log 2>&1
+0 */6 * * * cd ~/bots/thelwk-bots/newsboy/ && (curl http://localhost:6800/schedule.json -d project=newsboy -d spider=pmnews) >> ~/logs/cronlogs/newjob.log 2>&1
+0 */6 * * * cd ~/bots/thelwk-bots/newsboy/ && (curl http://localhost:6800/schedule.json -d project=newsboy -d spider=thenation) >> ~/logs/cronlogs/newjob.log 2>&1
+0 */6 * * * cd ~/bots/thelwk-bots/newsboy/ && (curl http://localhost:6800/schedule.json -d project=newsboy -d spider=tribune) >> ~/logs/cronlogs/newjob.log 2>&1
+0 */6 * * * cd ~/bots/thelwk-bots/newsboy/ && (curl http://localhost:6800/schedule.json -d project=newsboy -d spider=punchnews) >> ~/logs/cronlogs/newjob.log 2>&1
+
+# Run every 12 hours 
+0 */12 * * * cd ~/bots/thelwk-bots/newsboy/ && (curl http://localhost:6800/schedule.json -d project=newsboy -d spider=conciseng) >> ~/logs/cronlogs/newjob.log 2>&1

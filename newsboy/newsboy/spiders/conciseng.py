@@ -58,7 +58,8 @@ class ConciseUpdateSpider(scrapy.Spider):
         next_page=response.xpath("//a[@class='nextpostslink']/@href").get()
         page_num = int("".join(filter(str.isdigit, next_page)))
 
-        if page_num < 50: 
+        # Run every 12 hours 
+        if page_num < 4: 
             yield scrapy.Request(url=next_page, callback=self.parse)
 
     def parse_news(self, response):

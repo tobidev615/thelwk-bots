@@ -70,8 +70,8 @@ class ThenationUpdateSpider(scrapy.Spider):
 
         next_page = response.xpath("//a[@class='page_nav next']/@href").get()        
         page_num = int("".join(filter(str.isdigit, next_page)))
-
-        if page_num < 50: 
+        # Run every 6 hours
+        if page_num < 10: 
             yield scrapy.Request(url=next_page, callback=self.parse)
 
     def parse_news(self, response):
