@@ -1,0 +1,28 @@
+1593997422248	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNc2vqx"
+*** You are running in headless mode.
+1593997425840	Marionette	INFO	Listening on port 46819
+1593997425864	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://duckduckgo.com/d2820.js, line 1: unreachable code after return statement
+JavaScript warning: https://duckduckgo.com/d2820.js, line 1: unreachable code after return statement
+JavaScript warning: https://duckduckgo.com/d2820.js, line 1: unreachable code after return statement
+1593997431879	Marionette	INFO	Stopped listening on port 46819
+1593997513892	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileafbYZK"
+*** You are running in headless mode.
+1593997517312	Marionette	INFO	Listening on port 33707
+1593997517409	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593997522782	Marionette	INFO	Stopped listening on port 33707
+1593997632884	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileenpr4k"
+*** You are running in headless mode.
+1593997636156	Marionette	INFO	Listening on port 35201
+1593997636194	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593997641665	Marionette	INFO	Stopped listening on port 35201
+1593997961112	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileQ0GW5S"
+*** You are running in headless mode.
+1593997964420	Marionette	INFO	Listening on port 37961
+1593997964430	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593997969821	Marionette	INFO	Stopped listening on port 37961
+1593998071664	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileQgi6LE"
+*** You are running in headless mode.
+1593998075041	Marionette	INFO	Listening on port 34499
+1593998075076	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593998080462	Marionette	INFO	Stopped listening on port 34499

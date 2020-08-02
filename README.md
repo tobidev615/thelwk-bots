@@ -7,4 +7,17 @@ chartsng
 * apple_chart
 * covidng
 
+NewsBoy
+* ConciseNG
+* PMNEWS
+* Punch News
+* TheNation
+* Tribune
+* Vanguard
+
+SelChartsNG
+
+* NetflixNG
+* TrendsNG
+
 
