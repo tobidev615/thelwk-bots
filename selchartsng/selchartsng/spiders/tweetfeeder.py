@@ -167,6 +167,7 @@ class TrendsngSpider(scrapy.Spider):
                         'time': date_corrector(timeer),
                         'link': f_link,
                     }
+                except :
                     continue
 
 
