@@ -31,12 +31,12 @@ def date_corrector(value):
     return str(date)
 
 
-class TrendsngSpider(scrapy.Spider):
-    # custom_settings = {
-    #     'ITEM_PIPELINES': {
-    #         'project2sel.pipelines.localTrendPipeline': 300,
-    #     }
-    # }
+class TweetfeederSpider(scrapy.Spider):
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'selchartsng.pipelines.localTrendPipeline': 300,
+        }
+    }
     name = 'tweetfeeder'
     
     def start_requests(self):
@@ -155,7 +155,10 @@ class TrendsngSpider(scrapy.Spider):
                     tweet_vid = tweet_media.xpath(".//video/@src").getall()
                     tweet_img = tweet_media.xpath(".//img/@src").getall()
                     # tweet_type2 = list_controller(tweet_type)
-                    
+                    if tweet_type==[]:
+                        tweet_type='own'
+                    else:
+                        tweet_type=tweet_type
 
                     yield{
                         'number': counter,

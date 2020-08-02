@@ -36,11 +36,11 @@ def link_controller(value):
 
 
 class TrendsngSpider(scrapy.Spider):
-    # custom_settings = {
-    #     'ITEM_PIPELINES': {
-    #         'project2sel.pipelines.localTrendPipeline': 300,
-    #     }
-    # }
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'selchartsng.pipelines.localTrendPipeline': 300,
+        }
+    }
     name = 'trendsng'
     def start_requests(self): 
         yield SeleniumRequest(
