@@ -6,6 +6,12 @@
 0 1 * * * cd ~/bots/thelwk-bots/chartsng/ && (curl http://localhost:6800/schedule.json -d project=chartsng -d spider=apple_chart) >> ~/logs/cronlogs/newjob.log 2>&1
 0 1 * * * cd ~/bots/thelwk-bots/chartsng/ && (curl http://localhost:6800/schedule.json -d project=chartsng -d spider=covidng) >> ~/logs/cronlogs/newjob.log 2>&1
 
+#Runs every Hour
+9 * * * * cd ~/bots/thelwk-bots/selchartsng/ && (curl http://localhost:6800/schedule.json -d project=selchartsng -d spider=trendsng) >> ~/logs/cronlogs/newjob.log 2>&1
+
+#Runs every 3 Hours
+0 */3 * * * cd ~/bots/thelwk-bots/selchartsng/ && (curl http://localhost:6800/schedule.json -d project=selchartsng -d spider=tweetfeeder) >> ~/logs/cronlogs/newjob.log 2>&1
+
 #Runs every 6 hours 
 
 0 */6 * * * cd ~/bots/thelwk-bots/newsboy/ && (curl http://localhost:6800/schedule.json -d project=newsboy -d spider=vanguard) >> ~/logs/cronlogs/newjob.log 2>&1
