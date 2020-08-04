@@ -34,7 +34,7 @@ def date_corrector(value):
 class TweetfeederSpider(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
-            'selchartsng.pipelines.localTrendPipeline': 300,
+            'selchartsng.pipelines.localFeedPipeline': 300,
         }
     }
     name = 'tweetfeeder'

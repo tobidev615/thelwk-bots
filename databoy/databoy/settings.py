@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for chartsng project
+# Scrapy settings for databoy project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,17 +9,17 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'chartsng'
+BOT_NAME = 'databoy'
 
-SPIDER_MODULES = ['chartsng.spiders']
-NEWSPIDER_MODULE = 'chartsng.spiders'
+SPIDER_MODULES = ['databoy.spiders']
+NEWSPIDER_MODULE = 'databoy.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'chartsng (+http://www.yourdomain.com)'
+#USER_AGENT = 'databoy (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -39,38 +39,23 @@ ROBOTSTXT_OBEY = False
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-# DEFAULT_REQUEST_HEADERS = {
-#     'Method':'GET',
-#     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-#     'Accept-Encoding': 'gzip, deflate, br',
-#     'Accept-Language': 'en-US,en;q=0.9',
-#     'Authorization': 'Bearer',
-#     'Sec-Fetch-Dest': 'empty',
-#     'Sec-Fetch-Mode': 'cors',
-#     'Sec-Fetch-Site': 'same-origin',
-#     'Dnt': '1',
-#     'Sec-Fetch-Dest': 'document',
-#     'Sec-Fetch-Mode': 'navigate',
-#     'Sec-Fetch-Site': 'none',
-#     'Sec-Fetch-User': '?1',
-# }
-
+#DEFAULT_REQUEST_HEADERS = {
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
+#}
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'chartsng.middlewares.ChartsngSpiderMiddleware': 543,
+#    'databoy.middlewares.DataboySpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'chartsng.middlewares.ChartsngDownloaderMiddleware': 543,
+#    'databoy.middlewares.DataboyDownloaderMiddleware': 543,
 #}
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-    'chartsng.middlewares.UserAgentRotatorMiddleware': 400,
-}
+
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
@@ -80,14 +65,14 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'chartsng.pipelines.ChartsngPipeline': 300,
+#    'databoy.pipelines.DataboyPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
-AUTOTHROTTLE_ENABLED = True
+#AUTOTHROTTLE_ENABLED = True
 # The initial download delay
-AUTOTHROTTLE_START_DELAY = 10
+#AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
 #AUTOTHROTTLE_MAX_DELAY = 60
 # The average number of requests Scrapy should be sending in parallel to
@@ -103,11 +88,3 @@ AUTOTHROTTLE_START_DELAY = 10
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-FEED_EXPORT_ENCODING='utf-8'
-
-DB_SETTINGS = {
-    'db': "covidng_store",
-    'user': 'testuser',
-    'passwd': 'Olaoluwa123',
-    'host': 'ec2-3-23-20-242.us-east-2.compute.amazonaws.com'
-}
