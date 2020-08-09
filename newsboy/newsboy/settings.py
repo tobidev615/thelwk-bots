@@ -101,7 +101,7 @@ DB_SETTINGS = {
     'db': "covidng_store",
     'user': 'testuser',
     'passwd': 'Olaoluwa123',
-    'host': 'ec2-54-93-175-37.eu-central-1.compute.amazonaws.com'
+    'host': 'ec2-18-195-236-105.eu-central-1.compute.amazonaws.com'
 }
 
 DOWNLOAD_FAIL_ON_DATALOSS = False

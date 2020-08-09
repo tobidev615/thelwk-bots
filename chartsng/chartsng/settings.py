@@ -109,5 +109,5 @@ DB_SETTINGS = {
     'db': "covidng_store",
     'user': 'testuser',
     'passwd': 'Olaoluwa123',
-    'host': 'ec2-3-23-20-242.us-east-2.compute.amazonaws.com'
+    'host': 'ec2-18-195-236-105.eu-central-1.compute.amazonaws.com'
 }
