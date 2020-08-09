@@ -16,9 +16,15 @@ def vandate_controller(value):
 
 class VanguardUpdateSpider(scrapy.Spider):
 
+    # custom_settings = {
+    #     'ITEM_PIPELINES': {
+    #         'newsboy.pipelines.VangaurdNewsPipeline': 300,
+    #     }
+    # }
+
     custom_settings = {
         'ITEM_PIPELINES': {
-            'newsboy.pipelines.VangaurdNewsPipeline': 300,
+            'newsboy.pipelines.AllNewsPipeline': 300,
         }
     }
 
@@ -34,13 +40,13 @@ class VanguardUpdateSpider(scrapy.Spider):
         bigbox_list=response.xpath("//main[@id='main']/article")
         page_number = response.url
         if 'www.vanguardngr.com/category/national-news/' in response.url:
-            cat = 'national-news'
+            cat = 'news'
         elif 'www.vanguardngr.com/category/sports/' in response.url:
             cat = 'sports'
         elif 'www.vanguardngr.com/category/politics/' in response.url:
             cat = 'sports'
         else:
-            cat ='unknow-category'
+            cat ='unknown'
 
         for items in bigbox_list:
 
@@ -87,11 +93,12 @@ class VanguardUpdateSpider(scrapy.Spider):
         yield{
             'title': news_title,
             'date' : vandate_controller(news_time),
-            'pic' : pic_link,
-            'brief' : brief,
-            'full_story' : list_controller(news_body),
-            'news_Link' : news_link,
-            'tags' : news_tag,
+            'image' : pic_link,
+            'media': 'nomedia',
+            'brief' : brief[:250],
+            'body' : list_controller(news_body),
+            'link' : news_link,
+            'category' : news_tag,
             'source': news_source,
             'page' : page,
         }

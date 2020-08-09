@@ -14,11 +14,18 @@ def vandate_controller(value):
 
 
 class TribuneUpdateSpider(scrapy.Spider):
+    # custom_settings = {
+    #     'ITEM_PIPELINES': {
+    #         'newsboy.pipelines.TribuneNewsPipeline': 300,
+    #     }
+    # }
+
     custom_settings = {
         'ITEM_PIPELINES': {
-            'newsboy.pipelines.TribuneNewsPipeline': 300,
+            'newsboy.pipelines.AllNewsPipeline': 300,
         }
     }
+    
     name = 'tribune'
     allowed_domains = ['tribuneonlineng.com']
     start_urls = [
@@ -64,7 +71,8 @@ class TribuneUpdateSpider(scrapy.Spider):
             page = 1
 
         body = response.xpath("//div[@class='single-container']/article/div[@class='entry-content clearfix single-post-content']/child::*[not(.//a)]/text()").getall()
-        tag = response.xpath("//div[@class='term-badges ']/descendant::*/text()").get()
+        # tag = response.xpath("//div[@class='term-badges ']/descendant::*/text()").get()
+        tag='news'
         source='tribune_news'
 
         yield {
@@ -75,6 +83,7 @@ class TribuneUpdateSpider(scrapy.Spider):
             'body': list_controller(body),
             'date': vandate_controller(date),
             'image': thumb,
-            'tag': tag,
+            'media': 'nomedia',
+            'category': tag,
             'source': source
         }

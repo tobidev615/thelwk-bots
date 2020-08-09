@@ -19,9 +19,15 @@ def wordate_controller(value):
     return str(dt)
 
 class ConciseUpdateSpider(scrapy.Spider):
+    # custom_settings = {
+    #     'ITEM_PIPELINES': {
+    #         'newsboy.pipelines.ConciseNewsPipeline': 300,
+    #     }
+    # }
+
     custom_settings = {
         'ITEM_PIPELINES': {
-            'newsboy.pipelines.ConciseNewsPipeline': 300,
+            'newsboy.pipelines.AllNewsPipeline': 300,
         }
     }
     name = 'conciseng'
@@ -41,7 +47,7 @@ class ConciseUpdateSpider(scrapy.Spider):
         elif 'www.concise.ng/news/' in response.url:
             cat = 'news'
         else:
-            cat ='unknow-category'
+            cat ='unknown'
 
         for items in big_box:
             news_link= items.xpath(".//h3/a/@href").get()
@@ -86,6 +92,6 @@ class ConciseUpdateSpider(scrapy.Spider):
             'date': wordate_controller(date),
             'image': thumb,
             'media': media,
-            'tag': tag,
+            'category': tag,
             'source': source
         }

@@ -14,11 +14,18 @@ def vandate_controller(value):
 
 
 class ThenationUpdateSpider(scrapy.Spider):
+    # custom_settings = {
+    #     'ITEM_PIPELINES': {
+    #         'newsboy.pipelines.TheNationNewsPipeline': 300,
+    #     }
+    # }
+
     custom_settings = {
         'ITEM_PIPELINES': {
-            'newsboy.pipelines.TheNationNewsPipeline': 300,
+            'newsboy.pipelines.AllNewsPipeline': 300,
         }
     }
+    
     name = 'thenation'
     allowed_domains = ['thenationonlineng.net']
     start_urls = [
@@ -46,7 +53,7 @@ class ThenationUpdateSpider(scrapy.Spider):
             cat = 'city-beats'
         
         else:
-            cat ='unknown-category'
+            cat ='unknown'
 
         for items in big_box:
             news_link= items.xpath(".//h3[@class='jeg_post_title']/a/@href").get()
@@ -88,7 +95,7 @@ class ThenationUpdateSpider(scrapy.Spider):
         except:
             page = 1
 
-        body = response.xpath("//div[@class='content-inner ']/p/descendant-or-self::*/text()").getall()
+        body = response.xpath("//div[@class='content-inner ']//p/descendant-or-self::*/text()").getall()
         source='thenation_news'
 
         yield {
@@ -99,6 +106,7 @@ class ThenationUpdateSpider(scrapy.Spider):
             'body': list_controller(body),
             'date': vandate_controller(date),
             'image': thumb,
-            'tag': tag,
+            'category': tag,
+            'media': 'nomedia',
             'source': source
         }
