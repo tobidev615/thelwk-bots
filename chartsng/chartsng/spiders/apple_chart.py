@@ -43,7 +43,7 @@ class AppleChartSpider(scrapy.Spider):
         for songs in songs_row:
             counter = counter + 1
             title = songs.xpath(".//div[@class='song-name typography-label']/text()").getall()
-            artist = songs.xpath(".//div[@class='by-line typography-caption']/a/text()").get()
+            artist = songs.xpath(".//div[@class='by-line typography-caption']//a/text()").get()
             image = songs.xpath(".//img[@class='media-artwork-v2__image']/@srcset").get()
             song_link = songs.xpath(".//div[@class='col col-album']/a/@href").get()
 
