@@ -4,4 +4,4 @@ __pycache__/
 build/
 dbs/
 eggs/
-project.egg-info/
+project.egg-info/.DS_Store
