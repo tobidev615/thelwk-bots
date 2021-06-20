@@ -9,7 +9,7 @@ project.egg-info/.DS_Store
 *.DS_Store
 Thumbs.db
 
-#Distribution and Packaging
+# Distribution and Packaging
 
 .Python
 build/
