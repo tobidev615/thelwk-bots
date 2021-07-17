@@ -20,4 +20,5 @@ SelChartsNG
 * NetflixNG
 * TrendsNG
 
-
+DataBot
+* Contains HotelBots

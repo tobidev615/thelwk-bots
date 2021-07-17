@@ -18,11 +18,11 @@ def int_controller(value):
     return new_value
 
 class PmUpdateSpider(scrapy.Spider):
-    custom_settings = {
-        'ITEM_PIPELINES': {
-            'newsboy.pipelines.AllNewsPipeline': 300,
-        }
-    }
+    # custom_settings = {
+    #     'ITEM_PIPELINES': {
+    #         'newsboy.pipelines.AllNewsPipeline': 300,
+    #     }
+    # }
   # custom_settings = {
     #     'ITEM_PIPELINES': {
     #         'newsboy.pipelines.PMNewsPipeline': 300,
