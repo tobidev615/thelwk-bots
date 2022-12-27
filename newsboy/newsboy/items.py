@@ -10,5 +10,18 @@ import scrapy
 
 class NewsboyItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    sourcecategory = scrapy.Field()
+    body=scrapy.Field()
+    media=scrapy.Field()
+    date=scrapy.Field()
+    source=scrapy.Field()
+    link=scrapy.Field()
+    page=scrapy.Field()
+    appcategory = scrapy.Field() 
+    selftags = scrapy.Field()
+    brief =scrapy.Field()
+    location=scrapy.Field()
+    
+# Defined in this page
+# app category, selftags, brief,  location
