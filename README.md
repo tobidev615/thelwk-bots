@@ -3,6 +3,10 @@
 
 ## BOTS AND CLASSIFICATIONS
 
+Bots Enviroments: crawler_env
+
+API Enviroments: apirest
+
 chartsng
 * apple_chart
 * covidng
@@ -22,3 +26,6 @@ SelChartsNG
 
 DataBot
 * Contains HotelBots
+
+
+
